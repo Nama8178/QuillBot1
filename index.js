@@ -38,3 +38,12 @@ Array.from(tools).forEach((element)=>{
         currTool.innerText = element.querySelector('h3').innerText;
     })
 })
+
+
+
+textarea = document.querySelector("#userInput");
+textarea.addEventListener('input', autoResize, false);
+function autoResize() {
+    this.style.height = this.scrollHeight + 'px';
+    this.style.height = 'auto';
+}

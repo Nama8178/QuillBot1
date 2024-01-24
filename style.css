@@ -276,19 +276,149 @@ main{
     width: 100%;
     flex: 1;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.toolArea::-webkit-scrollbar {
+    display: none;
 }
 
 .toolWorkingSection{
-    background-color: rgb(247, 247, 247);
+    background-color: #f1f1f1;
     width: 100%;
-    height: 600px;
     padding: 50px;
+    padding-top: 30px;
 }
 .workingBox{
     height: 100%;
     width: 100%;
-    background-color: var(--secondary);
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    background-color: white;
+}
+.userInteractiveArea{
+    border-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 20px 0px;
+}
+.lenOptions{
+    background-color: #f1f1f1;
+}
+.lenOptions h3{
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    padding-bottom: 10px;
+    color: #505050;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.lenOptions h3:hover{
+    background: white;
+}
+.modes{
+    display: flex;
+    padding: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #DEE1E3;
+}
+.modes span,.modes div{
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+.mode{
+    color: var(--secondary);
+}
+.writingArea{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.writingArea textarea {
+    outline: none;
+    border: none;
+    padding: 20px;
+    height: auto;
+    resize: none;
+    min-height: calc(50vh - 0px);
+    width: 100%;
+    font-size: 0.9rem;
+    overflow: hidden;
+    color: #505050;
+}
+.inputArea{
+    flex: 1;
+    position: relative;
+    border: 1px solid #ccc; 
+}
+.placeholderBox {
+    position: absolute;
+    color: #999; /* Placeholder color */
+    font-style: italic;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    gap: 20px;
+  }
+  .placeholderItem{
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6%;
+    font-weight: 400;
+    color: var(--secondary) ;
+    border: 1.5px solid var(--secondary);
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .placeholderItem h4{
+    font-size: 0.9rem;
+  }
+  .emoji{
+    font-size: 1.5rem;
+  }
+
+.toolFuntionality{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.toolFuntionality i{
+    color: #505050;
+}
+.uploadDoc{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-wrap: nowrap;
+    color: #383838;
+}
+.uploadDoc i{
+    font-size: 1.2rem;
+}
+.toolBtn{
+    cursor: pointer;
+}
+
+  
+.outputArea {
+    flex: 1; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
 }
 
 /* Tool Area End */
