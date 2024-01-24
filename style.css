@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 :root{
     --secondary: #499557;
@@ -22,8 +23,9 @@ nav{
     padding: 10px;
     flex-wrap: wrap;
     width: 100%;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     height: 55.8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .navDiv{
@@ -41,7 +43,7 @@ nav{
 .navBarBtn{
     color: rgb(42, 42, 42);
     border-radius: 100%;
-    padding: 2px;
+    padding: 1px;
     aspect-ratio: 1;
     height: 35px;
     font-size: 1.1rem;
@@ -78,14 +80,20 @@ nav{
     padding: 10px;
     color: white;
     border-radius: 20px;
+    font-size: 0.8rem;
+    text-wrap: nowrap;
 }
 .prememum i{
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+.mobileNavPrimium{
+    display: none;
 }
 .len img{
     border-radius: 50%;
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 /* End Nav Bar  */
 
@@ -101,19 +109,29 @@ main{
 .sideBar{
     display: flex;
     flex-direction: column;
-    width: 55px;
     width: 250px;
     /* background-color: red; */
     height: 100%;
     text-transform: capitalize;
+    transition: width 0.1s ease-in-out;
+    text-wrap: nowrap;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.sideBarItem:hover{
+    cursor: pointer;
+    background-color: rgb(233, 233, 233);
+}
+.closeText h3{
+    display: none;
 }
 .sideBar h3{
     font-size: 1.03rem;
+    /* width: 100%;
+    height: 100%; */
 }
 .toolList{
     width: 100%;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
 }
 .toolList .tool{
     display: flex;
@@ -131,7 +149,8 @@ main{
     gap: 10px;
     padding: 10px;
     color: #FFD700;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 .quillPremium i{
     color: #FFD700;
@@ -161,6 +180,99 @@ main{
     padding: 10px;
 }
 
+/* sidebar for mobile view  */
+
+#toggleMobileNavBar{
+    display: none;
+}
+.sideNavBar{
+    position: fixed;
+    top: 0;
+    width: 0px;
+    height: 100vh;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    background-color: #fff;
+    right: 0;
+    transition: all 0.2s ease;
+}
+.navItem{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+    #toggleBtn{
+        display: none;
+    }
+    #toggleMobileNavBar{
+        display: block;
+    }
+    .currTool,.quillPremium,.userSupport{
+        display: none;
+    }
+    main{
+        flex-direction: column;
+        width: 100%;
+    }
+    .sideNavBar h3{
+        font-size: 1.05rem;
+        display: inline;
+        text-transform: capitalize;
+    }
+    .sideBar{
+        height: 60px;
+        width: 100%;
+        flex-direction: row;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    }
+    .toolList{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-evenly;
+        overflow-x: scroll;
+    }
+    /* .tool{
+        width: fit-content;
+        display: inline-block;
+    } */
+    .sideBar h3{
+        display: none;
+    }
+    .userAuth{
+        display: none;
+    }
+    .mobileNavPrimium{
+        font-size: 0.5rem;
+        text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        background: var(--secondary);
+        padding: 10px;
+        width: 145px;
+        color: white;
+        border-radius: 20px;
+    }
+    .mobileNavPrimium h3{
+        text-wrap: nowrap;
+    }
+    .mobileButton{
+        display: flex;
+        gap: 10px;
+        width: 250px;
+        justify-content: flex-end;
+    }
+    #toggleMobileNavBar{
+        z-index: 20;
+    }
+}
+
 /* Sidebar End */
 
 /* Tool Area start */
@@ -171,6 +283,7 @@ main{
     width: 100%;
     /* background-color: red; */
     flex: 1;
+    overflow-y: scroll;
 }
 
 .toolWorkingSection{
@@ -182,11 +295,8 @@ main{
 .workingBox{
     height: 100%;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--secondary);
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 /* Tool Area End */
-
-
-
