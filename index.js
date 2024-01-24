@@ -20,9 +20,11 @@ const toggleMobileSideBar = (e) => {
     let width = sideNavBar.style.width;
     if (width == "0px") {
         sideNavBar.style.width = "250px";
+        toggleMobileNavBar.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     }
     else {
         sideNavBar.style.width = "0px";
+        toggleMobileNavBar.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
 }
 
