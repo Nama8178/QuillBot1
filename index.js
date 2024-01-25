@@ -42,8 +42,58 @@ Array.from(tools).forEach((element)=>{
 
 
 textarea = document.querySelector("#userInput");
+placeholderBox = document.getElementById("placeholderBox");
+pastePlaceholder = document.getElementById("pastePlaceholder");
+tryPlaceholder = document.getElementById("tryPlaceholder");
+clearText = document.getElementById("clearText");
+
+counter = document.getElementById("counter");
+
+
 textarea.addEventListener('input', autoResize, false);
 function autoResize() {
-    this.style.height = this.scrollHeight + 'px';
     this.style.height = 'auto';
+    placeholderBox.style.display = textarea.value.length ? 'none'  : 'flex';
+    this.style.height = this.scrollHeight + 'px';
+    const uploadElement = '<i class="fa-solid fa-cloud-arrow-up" style="color: #ccc;"></i>    <h3>Upload Doc</h3>' ;
+    const countElement = `<h3>${textarea.value.split(' ').length} Word </h3>`;
+    
+    counter.innerHTML = textarea.value.length ? countElement : uploadElement;
 }
+
+pastePlaceholder.addEventListener('click', function() {
+    navigator.clipboard.readText()
+        .then(function(clipboardText) {
+            textarea.value = clipboardText;
+            placeholderBox.style.display = textarea.value.length ? 'none'  : 'flex';
+            const uploadElement = '<i class="fa-solid fa-cloud-arrow-up" style="color: #ccc;"></i>    <h3>Upload Doc</h3>' ;
+            const countElement = `<h3>${textarea.value.split(' ').length} Word </h3>`;
+            
+            counter.innerHTML = textarea.value.length ? countElement : uploadElement;
+        })
+        .catch(function(err) {
+            console.error('Unable to read clipboard data', err);
+        });
+});
+
+tryPlaceholder.addEventListener('click',()=>{
+    let text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia accusantium necessitatibus consectetur voluptatem possimus dignissimos est culpa cupiditate impedit provident?";
+    textarea.value = text;
+    placeholderBox.style.display = textarea.value.length ? 'none'  : 'flex';
+    const uploadElement = '<i class="fa-solid fa-cloud-arrow-up" style="color: #ccc;"></i>    <h3>Upload Doc</h3>' ;
+    const countElement = `<h3>${textarea.value.split(' ').length} Word </h3>`;
+    
+    counter.innerHTML = textarea.value.length ? countElement : uploadElement;
+});
+
+clearText.addEventListener('click',()=>{
+    textarea.value = "";
+    placeholderBox.style.display = textarea.value.length ? 'none'  : 'flex';
+    const uploadElement = '<i class="fa-solid fa-cloud-arrow-up" style="color: #ccc;"></i>    <h3>Upload Doc</h3>' ;
+    const countElement = `<h3>${textarea.value.split(' ').length} Word </h3>`;
+    
+    counter.innerHTML = textarea.value.length ? countElement : uploadElement;
+})
+
+
+

@@ -436,6 +436,7 @@ main{
     padding: 10px;
     text-align: center;
     color: #505050;
+    cursor: pointer;
 }
 .extraTool h3{
     color: #252525;
@@ -443,10 +444,21 @@ main{
     line-height: 20px;
     font-size: 15px;
 }
+.clearText{
+    height: 20px;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
 .outputArea {
     flex: 1; 
     border: 1px solid #ccc; 
     padding: 20px; 
 }
+
 
 /* Tool Area End */

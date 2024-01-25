@@ -202,16 +202,19 @@
                             </div>
                             <div class="writingArea">
                                 <div class="inputArea">
+                                    <button class="navBarBtn clearText" id="clearText">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
                                     <textarea name="userInput" id="userInput" cols="30" rows="10"
                                         placeholder="To rewrite text, enter or paste it here and press &quot;Paraphrase.&quot;"></textarea>
-                                    <div class="placeholderBox">
-                                        <div class="tryPlaceholder placeholderItem">
+                                    <div class="placeholderBox" id="placeholderBox">
+                                        <div class="tryPlaceholder placeholderItem" id="tryPlaceholder">
                                             <div class="emoji">
                                                 👋
                                             </div>
                                             <h4>Try Sample Text</h4>
                                         </div>
-                                        <div class="pastePlaceholder placeholderItem">
+                                        <div class="pastePlaceholder placeholderItem" id="pastePlaceholder">
                                             <div class="emoji">
                                                 <i class="fa-regular fa-clipboard"></i>
                                             </div>
@@ -219,7 +222,7 @@
                                         </div>
                                     </div>
                                     <div class="toolFuntionality">
-                                        <div class="uploadDoc">
+                                        <div class="uploadDoc counter" id="counter">
                                             <i class="fa-solid fa-cloud-arrow-up" style="color: #ccc;"></i>
     
                                             <h3>Upload Doc</h3>
