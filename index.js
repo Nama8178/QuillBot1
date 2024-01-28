@@ -97,3 +97,13 @@ clearText.addEventListener('click',()=>{
 
 
 
+function btn() {
+    let t = document.querySelector(".example").style.display;
+    if(t == "none"){
+        t = "block";
+    }
+    else{
+        t = "none";
+    }
+    document.querySelector(".example").style.display = t;
+}

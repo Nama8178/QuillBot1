@@ -462,3 +462,49 @@ main{
 
 
 /* Tool Area End */
+
+/* Aman's update */
+@media only screen and (max-width:450px) {
+    .placeholderItem{
+        width: 100px;
+    }
+    .placeholderBox{
+        gap: 20px;
+    }
+    .icon{
+        cursor: pointer;
+        display: block;
+    }
+    .icon:active{
+        color: #499557;
+    }
+    .example{
+        z-index: 1;
+        display: none;
+    }
+    .example1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        margin-left: -40px;
+        background-color: #fff;
+    }
+    .toolWorkingSection{
+        width:auto;
+    }
+    .toolFuntionality{
+        height: 20%;
+    }
+    .writingArea{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .icon{
+        display: none;
+    }
+}
+
